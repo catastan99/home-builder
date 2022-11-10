@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/utility.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+
+    <title>HOMEBUILDER</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script>
+      function displayCardText(btnID, cardID) {
+        document.getElementById("card-text-1").style.display = "none";
+        document.getElementById("card-text-2").style.display = "none";
+        document.getElementById("card-text-3").style.display = "none";
+
+        document.getElementById("btn-1").classList.remove("btn-active");
+        document.getElementById("btn-2").classList.remove("btn-active");
+        document.getElementById("btn-3").classList.remove("btn-active");
+
+        document.getElementById(cardID).style.display = "block";
+        document.getElementById(btnID).classList.add("btn-active");
+      }
+
+      function handleMenu() {
+        var menu = document.getElementById("menu-mobile");
+        if (menu.style.height === "0px" || menu.style.height === "") {
+          menu.style.height = "250px";
+        } else menu.style.height = "0px";
+      }
+
+      function maximizeImage(path) {
+        document.getElementById("full-screen-image").style.background =
+          "url(" + path + ") no-repeat center center/cover";
+        document.getElementById("full-screen").style.display = "block";
+      }
+
+      function closeImage() {
+        if (document.getElementById("full-screen").style.display === "block")
+          document.getElementById("full-screen").style.display = "none";
+      }
+
+      function addStickyClass() {
+        if (window.pageYOffset >= 200) {
+          document.getElementById("navbar-2").classList.add("sticky-navbar");
+          document.getElementById("menu-mobile").classList.add("sticky-menu");
+        } else {
+          document.getElementById("navbar-2").classList.remove("sticky-navbar");
+          document
+            .getElementById("menu-mobile")
+            .classList.remove("sticky-menu");
+        }
+      }
+    </script>
+  </head>
+
+  <body onscroll="addStickyClass()">
+    <header class="hero">
+      <div class="navbar-1 container" id="navbar-1">
+        <h1>Home<span class="primary-color">builder.</span></h1>
+        <ul>
+          <li><i class="fab fa-facebook"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-youtube"></i></li>
+        </ul>
+      </div>
+      <div class="navbar-2" id="navbar-2">
+        <div class="container">
+          <div class="flex">
+            <ul>
+              <li><a class="active" href="index.html">Home</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="#">Our team</a></li>
+              <li><a href="#">Project</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search">
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search"
+              />
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="mobile-menu-icon">
+              <i class="fas fa-bars fa-2x" onclick="handleMenu()"> </i>
+            </div>
+          </div>
+        </div>
+        <div class="menu-mobile" id="menu-mobile">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content">
+        <h1>HOME BUILDER</h1>
+      </div>
+    </header>
+
+    <section class="recommandation container">
+      <div class="services">
+        <div class="service">
+          <div class="icon"></div>
+          <h2>Construction</h2>
+          <p>
+            Even the all-powerful Pointing has no control about the blind texts
+            it is an almost unorthographic.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon"></div>
+          <h2>Renovation</h2>
+          <p>
+            Even the all-powerful Pointing has no control about the blind texts
+            it is an almost unorthographic.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon"></div>
+          <h2>Architecture</h2>
+          <p>
+            Even the all-powerful Pointing has no control about the blind texts
+            it is an almost unorthographic.
+          </p>
+        </div>
+        <div class="service">
+          <div class="icon"></div>
+          <h2>Painting</h2>
+          <p>
+            Even the all-powerful Pointing has no control about the blind texts
+            it is an almost unorthographic.
+          </p>
+        </div>
+      </div>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="details">
+            <h3>Expert & Professional</h3>
+            <p>Separated they live in. A small river named Duden flows</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="details">
+            <h3>High Quality Work</h3>
+            <p>Separated they live in. A small river named Duden flows</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <div class="details">
+            <h3>24/7 Help Support</h3>
+            <p>Separated they live in. A small river named Duden flows</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="description container">
+      <div class="description-img">
+        <img src="./images/excavator-800996_1920.jpg" alt="excavator" />
+      </div>
+      <div class="description-text">
+        <h3 class="primary-color">Welcome to Home Builder</h3>
+        <h2>We create and turn into reality</h2>
+        <p>
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia
+        </p>
+        <div class="buttons">
+          <button
+            class="btn btn-active"
+            id="btn-1"
+            onclick="displayCardText('btn-1', 'card-text-1')"
+          >
+            Our Mission
+          </button>
+          <button
+            class="btn"
+            id="btn-2"
+            onclick="displayCardText('btn-2', 'card-text-2')"
+          >
+            Our Vision
+          </button>
+          <button
+            class="btn"
+            id="btn-3"
+            onclick="displayCardText('btn-3', 'card-text-3')"
+          >
+            Our Value
+          </button>
+        </div>
+        <p class="card-text" id="card-text-1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+          deleniti voluptatem. Quo modi accusamus repudiandae praesentium omnis
+          nam obcaecati nisi!
+        </p>
+
+        <p class="card-text" id="card-text-2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem amet
+          ipsa enim veniam ducimus odit.
+        </p>
+
+        <p class="card-text" id="card-text-3">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi at
+          quis, autem nam nihil similique hic natus.
+        </p>
+      </div>
+    </section>
+
+    <section class="images">
+      <div class="img img1" onclick="maximizeImage('../images/1.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+      <div class="img img2" onclick="maximizeImage('../images/2.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+      <div class="img img3" onclick="maximizeImage('../images/3.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+      <div class="img img4" onclick="maximizeImage('../images/4.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+      <div class="img img5" onclick="maximizeImage('../images/5.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+      <div class="img img6" onclick="maximizeImage('../images/6.jpg')">
+        <div class="img-content">
+          <h3>Building</h3>
+          <h3>College Health Profession</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonials-content">
+          <p>Testimonial</p>
+          <h2>Happy Clients</h2>
+          <div class="testimonials-block">
+            <div class="testimonial">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                modi.
+              </h4>
+              <div class="user-info">
+                <div class="user-image">
+                  <img src="./images/person1.jpg" alt="user1" />
+                </div>
+                <div class="user-name">
+                  <h4>Roger Scott</h4>
+                  <h5>Marketing Manager</h5>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                modi.
+              </h4>
+              <div class="user-info">
+                <div class="user-image">
+                  <img src="./images/person2.jpg" alt="user2" />
+                </div>
+                <div class="user-name">
+                  <h4>Roger Scott</h4>
+                  <h5>Marketing Manager</h5>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial">
+              <h4>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est,
+                modi.
+              </h4>
+              <div class="user-info">
+                <div class="user-image">
+                  <img src="./images/person3.jpg" alt="user3" />
+                </div>
+                <div class="user-name">
+                  <h4>Roger Scott</h4>
+                  <h5>Marketing Manager</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="blog">
+        <p class="primary-color">Our Blog</p>
+        <h2>Recent Blog</h2>
+        <div class="posts">
+          <div class="post">
+            <div class="post-image">
+              <img src="./images/5.jpg" alt="img" />
+            </div>
+            <div class="post-info">
+              <p>January 30,2021</p>
+              <p>Admin</p>
+            </div>
+            <h2>
+              Even the all-powerful Pointing has no control about the blind
+              texts
+            </h2>
+          </div>
+          <div class="post">
+            <div class="post-image">
+              <img src="./images/3.jpg" alt="img" />
+            </div>
+            <div class="post-info">
+              <p>January 30,2020</p>
+              <p>Admin</p>
+            </div>
+            <h2>
+              Even the all-powerful Pointing has no control about the blind
+              texts
+            </h2>
+          </div>
+          <div class="post">
+            <div class="post-image">
+              <img src="./images/2.jpg" alt="img" />
+            </div>
+            <div class="post-info">
+              <p>January 10,2020</p>
+              <p>Admin</p>
+            </div>
+            <h2>
+              Even the all-powerful Pointing has no control about the blind
+              texts
+            </h2>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="newsletter container">
+      <h2>Subscribe to our Newsletter</h2>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Enter email address" />
+        <input type="submit" value="Subscribe" />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="main-section">
+        <div class="footer-groups">
+          <div class="group">
+            <h2>About us</h2>
+            <p>
+              A small river named Duden flows by their place and supplies it
+              with the necessary regelialia.
+            </p>
+          </div>
+          <div class="group">
+            <h2>Services</h2>
+            <a href="#">Construction</a>
+            <a href="#">House Renovation</a>
+            <a href="#">Painting</a>
+            <a href="#">Arhitecture Design</a>
+          </div>
+          <div class="group">
+            <h2>About</h2>
+            <a href="#">Staff</a>
+            <a href="#">Team</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+          </div>
+          <div class="group">
+            <h2>Resources</h2>
+            <a href="#">Security</a>
+            <a href="#">Global</a>
+            <a href="#">Charts</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <p>Copyright &copy;2022 All rights reserved</p>
+      </div>
+      <div class="quote">
+        <h2>Request A Quote</h2>
+        <form action="#">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Your email" />
+          <input type="text" placeholder="Subject" />
+          <textarea placeholder="Message"></textarea>
+          <input type="submit" value="SEND" />
+        </form>
+      </div>
+    </footer>
+
+    <section class="full-screen" id="full-screen">
+      <div class="full-screen-image" id="full-screen-image">
+        <div class="full-screen-group" onclick="closeImage()">
+          <i class="fa fa-times fa-2x"></i>
+          <p>CLOSE</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
